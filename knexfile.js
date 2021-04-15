@@ -30,12 +30,8 @@ module.exports = {
         min: 2,
         max: 10,
       },
-      migrations: {
-        directory: "./data/migrations",
-      },
-      seeds: {
-        directory: "./data/seeds",
-      },
+      migrations: { directory: "./data/migrations" },
+      seeds: { directory: "./data/seeds" },
     },
   },
 };
