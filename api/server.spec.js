@@ -9,7 +9,6 @@ beforeAll(async () => {
 
 beforeAll(async () => {
   await db("hobbits").truncate();
-  await db.seed.run();
 });
 
 afterAll(async () => {
@@ -32,18 +31,18 @@ describe("server.js test", () => {
       res = await request(server).get("/");
     });
     //return status value
-    test("returns 200", () => {
+    test("returns 200", async () => {
       //   const res = await request(server).get("/");
       expect(res.status).toBe(200);
     });
     //return type
-    test("should return JSON", () => {
+    test("should return JSON", async () => {
       //   const res = await request(server).get("/");
       expect(res.type).toBe("application/json");
     });
 
     //return shape/value
-    test("should return {api:up}", () => {
+    test("should return {api:up}", async () => {
       expect(res.body).toEqual({ api: "up" });
     });
   });
